@@ -31,3 +31,15 @@ resource "aws_instance" "ec2_instance1" {
 }
 }
 
+
+resource "aws_s3_bucket" "name1" {
+  bucket = "my-unique-bucket-name-12345" # Ensure this bucket name is globally unique
+  acl    = "private"
+
+  tags = {
+    Name        = "MyS3Bucket"
+    Environment = "Development"
+  }
+  
+}
+
